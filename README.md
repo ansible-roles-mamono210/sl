@@ -1,9 +1,10 @@
-[![](https://github.com/ansible-roles-matsumura/sl/workflows/Ansible%20Playbook/badge.svg)](https://github.com/ansible-roles-matsumura/sl/actions)
+[![](https://github.com/ansible-roles-matsumura/sl/workflows/Build/badge.svg)](https://github.com/ansible-roles-matsumura/sl/actions?query=workflow%3ABuild)
+[![](https://github.com/ansible-roles-matsumura/sl/workflows/Lint/badge.svg)](https://github.com/ansible-roles-matsumura/sl/actions?query=workflow%3ALint)
 
-Role Name
+Role Description
 =========
 
-Installs sl for CentOS7.
+Installs [sl](https://ja.wikipedia.org/wiki/Sl_(UNIX)) for CentOS7.
 
 Requirements
 ------------
