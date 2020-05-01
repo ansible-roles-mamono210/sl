@@ -1,5 +1,6 @@
 [![](https://github.com/ansible-roles-matsumura/sl/workflows/Build/badge.svg)](https://github.com/ansible-roles-matsumura/sl/actions?query=workflow%3ABuild)
 [![](https://github.com/ansible-roles-matsumura/sl/workflows/Lint/badge.svg)](https://github.com/ansible-roles-matsumura/sl/actions?query=workflow%3ALint)
+[![](https://github.com/ansible-roles-matsumura/sl/workflows/Trailing%20whitespace/badge.svg)](https://github.com/ansible-roles-matsumura/sl/actions?query=workflow%3A%22Trailing+whitespace%22)
 
 Role Description
 =========
