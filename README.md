@@ -6,7 +6,7 @@
 Role Description
 =========
 
-Installs [sl](https://ja.wikipedia.org/wiki/Sl_(UNIX)) for CentOS7.
+Installs [sl](https://ja.wikipedia.org/wiki/Sl_(UNIX)) for CentOS7/CentOS8.
 
 Requirements
 ------------

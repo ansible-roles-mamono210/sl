@@ -5,6 +5,9 @@ on: [deployment, push]
 jobs:
   ansible-playbook:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        docker-image: [centos7-latest, centos8-latest]
     steps:
       - name: Upgrade Ansible
         run: |
@@ -13,10 +16,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Docker run CentOS7 image sudo installed
+      - name: Docker | run containers
         run: |
-          docker run -d -t --name=mycontainer \
-          tomonorimatsumura/ansible-test:latest
+          docker run -d -t --name=${{ matrix.docker-image }} \
+          tomonorimatsumura/ansible-test:${{ matrix.docker-image }}
 
       - name: Install Ansible galaxy roles
         run: |
@@ -26,17 +29,19 @@ jobs:
         env:
           ANSIBLE_FORCE_COLOR: '1'
         run: |
-          ansible-playbook -i 'mycontainer,' -c docker -u ansible tests/test.yml
+          ansible-playbook -i "${{ matrix.docker-image }}," \
+          -c docker -u ansible tests/test.yml
 
       - name: Check idempotency
         env:
           ANSIBLE_FORCE_COLOR: '1'
         run: |
-          ansible-playbook -i 'mycontainer,' -c docker -u ansible tests/test.yml
+          ansible-playbook -i "${{ matrix.docker-image }}," \
+          -c docker -u ansible tests/test.yml
 
       - name: Check if sl command works
         run: |
-          docker exec --tty mycontainer env TERM=xterm sl
+          docker exec --tty ${{ matrix.docker-image }} env TERM=xterm sl
 
       - name: Show Ansible version
         run: |
@@ -44,4 +49,5 @@ jobs:
 
       - name: Show OS information
         run: |
-          docker exec --tty mycontainer env TERM=xterm cat /etc/redhat-release
+          docker exec --tty ${{ matrix.docker-image }} env TERM=xterm \
+          cat /etc/redhat-release
