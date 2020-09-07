@@ -24,7 +24,7 @@ rules:
   key-ordering: disable
   line-length:
     level: error
-    max: 90
+    max: 96
   new-line-at-end-of-file: enable
   new-lines: enable
   octal-values: disable

@@ -5,7 +5,12 @@ driver:
   name: docker
 platforms:
   - name: instance
-    image: tomonorimatsumura/ansible-test:${MOLECULE_DISTRO:-centos8}-latest
+    image: "docker.pkg.github.com/docker-hub-tm/ansible-test/${MOLECULE_DISTRO:-centos8}:latest"
+    registry:
+      url: docker.pkg.github.com
+      credentials:
+        username: ${USERNAME}
+        password: ${PASSWORD}
     pre_build_image: True
 provisioner:
   name: ansible
