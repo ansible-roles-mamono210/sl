@@ -4,6 +4,7 @@
 
   tasks:
     - name: Install which
+      become: true
       package:
         name: which
         state: present
