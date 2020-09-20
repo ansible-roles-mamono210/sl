@@ -53,12 +53,12 @@ jobs:
       - name: Install Ansible galaxy roles
         run: |
           ansible-galaxy role install \
-          -r tests/requirements.yml
+          -r requirements.yml
 
       - name: Install Ansible galaxy collections
         run: |
           ansible-galaxy collection install \
-          -r tests/requirements.yml
+          -r requirements.yml
 
       - name: Execute ansible-playbook command
         env:
