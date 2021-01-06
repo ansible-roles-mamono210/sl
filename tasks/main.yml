@@ -1,5 +1,5 @@
 ---
 - name: Install sl
-  package:
+  ansible.builtin.package:
     name: sl
     state: present

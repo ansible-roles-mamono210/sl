@@ -5,24 +5,24 @@
   tasks:
     - name: Install which
       become: true
-      package:
+      ansible.builtin.package:
         name: which
         state: present
 
     - name: Check whether sl installed
-      command: which sl
+      ansible.builtin.command: which sl
       register: SL_INSTALLED
       changed_when: false
 
     - name: Check OS version
-      command: cat /etc/redhat-release
+      ansible.builtin.command: cat /etc/redhat-release
       register: OS_VERSION
       changed_when: false
 
     - name: Make sure sl is installed
-      debug:
+      ansible.builtin.debug:
         var: SL_INSTALLED
 
     - name: Show OS version
-      debug:
+      ansible.builtin.debug:
         var: OS_VERSION
