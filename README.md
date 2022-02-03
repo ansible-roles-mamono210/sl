@@ -3,7 +3,7 @@
 Role Description
 =========
 
-Installs [sl](https://ja.wikipedia.org/wiki/Sl_(UNIX)) for CentOS7/CentOS8.
+Installs [sl](https://ja.wikipedia.org/wiki/Sl_(UNIX)) for CentOS7/Stream8.
 
 Requirements
 ------------
