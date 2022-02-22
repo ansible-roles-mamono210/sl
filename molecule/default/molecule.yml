@@ -3,6 +3,10 @@ dependency:
   name: galaxy
 driver:
   name: docker
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
 platforms:
   - name: instance
     image: ${MOLECULE_IMAGE}
@@ -11,13 +15,14 @@ provisioner:
   config_options:
     defaults:
       callbacks_enabled: ansible.posix.profile_tasks
-verifier:
-  name: ansible
 scenario:
   test_sequence:
     - dependency
     - syntax
     - create
+    - prepare
     - converge
     - idempotence
     - verify
+verifier:
+  name: ansible
