@@ -8,7 +8,7 @@ Installs [sl](https://ja.wikipedia.org/wiki/Sl_(UNIX)) for CentOS7/Stream8.
 Requirements
 ------------
 
-EPEL installed before running this role.
+[EPEL](https://docs.fedoraproject.org/en-US/epel/) installed before running this role.
 
 Role Variables
 --------------
@@ -28,7 +28,7 @@ Example Playbook
 - hosts: all
   become: true
   roles:
-    - robertdebock.epel
+    - geerlingguy.repo-epel
     - sl
 ```
 

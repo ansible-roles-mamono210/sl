@@ -5,4 +5,4 @@
   vars:
     ansible_user: ansible
   roles:
-    - robertdebock.epel
+    - mamono210.epel
