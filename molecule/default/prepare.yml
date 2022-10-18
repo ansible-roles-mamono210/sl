@@ -1,8 +1,0 @@
----
-- name: Prepare
-  hosts: all
-  become: true
-  vars:
-    ansible_user: ansible
-  roles:
-    - mamono210.epel
